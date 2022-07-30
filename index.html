@@ -20,7 +20,6 @@
 
 			function Hook() 
 			{
-				
 				var titles = document.getElementsByClassName("title");
 				titles[0].innerHTML = "Bullet Smasher";
 				titles[0].style.display = "inline";
@@ -39,28 +38,20 @@
 				subtitles[0].innerHTML = "Input:";
 				subtitles[1].innerHTML = "Output:";
 				
-				var editor = document.getElementsByClassName("DraftEditor-editorContainer");
-				subtitles[0].innerHTML = "Input(" + editor[0].innerText.length + "):";
-				
-				var test = document.getElementsByClassName("notranslate public-DraftEditor-content");
-				
-				
-				
+				var editor = document.getElementsByClassName("notranslate public-DraftEditor-content");
+				var buffer = editor[0].innerText.replace(/(\r\n|\n|\r)/gm,"");
+				subtitles[0].innerHTML = "Input(" + buffer.length + "):";
+
 				var myFunc = function() 
 				{
 					var subtitles = document.getElementsByClassName("subtitle");
 					var editor = document.getElementsByClassName("notranslate public-DraftEditor-content");
 					var buffer = editor[0].innerText.replace(/(\r\n|\n|\r)/gm,"");
-					
-					
 					subtitles[0].innerHTML = "Input(" + buffer.length + "):";
-					
 				}
 				
-				test[0].onkeyup = myFunc;
-				test[0].oninput = myFunc;
-				
-				
+				editor[0].onkeyup = myFunc;
+				editor[0].oninput = myFunc;
 			}
 
 		</script>
