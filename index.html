@@ -43,7 +43,10 @@
 				subtitles[0].innerHTML = "Input(" + editor[0].innerText.length + "):";
 				
 				var test = document.getElementsByClassName("notranslate public-DraftEditor-content");
-				test[0].onkeyup = test[0].oninput = function() 
+				
+				
+				
+				var myFunc = function() 
 				{
 					var subtitles = document.getElementsByClassName("subtitle");
 					var editor = document.getElementsByClassName("notranslate public-DraftEditor-content");
@@ -57,6 +60,9 @@
 						subtitles[0].innerHTML = "Input(" + editor[0].innerText.length + "):";
 					}
 				}
+				
+				test[0].onkeyup = myFunc;
+				test[0].oninput = myFunc;
 				
 				
 			}
