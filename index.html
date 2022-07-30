@@ -50,15 +50,11 @@
 				{
 					var subtitles = document.getElementsByClassName("subtitle");
 					var editor = document.getElementsByClassName("notranslate public-DraftEditor-content");
+					var buffer = editor[0].innerText.replace(/(\r\n|\n|\r)/gm,"");
 					
-					if(editor[0].innerText == "\n")
-					{
-						subtitles[0].innerHTML = "Input(0):";
-					}
-					else
-					{
-						subtitles[0].innerHTML = "Input(" + editor[0].innerText.length + "):";
-					}
+					
+					subtitles[0].innerHTML = "Input(" + buffer.length + "):";
+					
 				}
 				
 				test[0].onkeyup = myFunc;
