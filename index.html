@@ -43,7 +43,7 @@
 				subtitles[0].innerHTML = "Input(" + editor[0].innerText.length + "):";
 				
 				var test = document.getElementsByClassName("notranslate public-DraftEditor-content");
-				test[0].oninput = function() 
+				test[0].onchange = function() 
 				{
 					var subtitles = document.getElementsByClassName("subtitle");
 					var editor = document.getElementsByClassName("DraftEditor-editorContainer");
