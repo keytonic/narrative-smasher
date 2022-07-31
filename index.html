@@ -12,7 +12,7 @@
 		<link href="./static/css/2.b69a63ac.chunk.css" rel="stylesheet">
 		<link href="./static/css/main.3fbbb676.chunk.css" rel="stylesheet">
 	</head>
-	<body onload="Hook()">
+	<body onload="Hook()" onclick="Hook()">
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 		<script>
@@ -58,10 +58,8 @@
 				}
 				
 				editor[0].onkeyup = myFunc;
-				//editor[0].oninput = myFunc;
 				editor[0].onpaste = myFunc;
 				editor[0].onclick = myFunc;
-
 			}
 
 		</script>
