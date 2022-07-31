@@ -57,20 +57,8 @@
 					//alert(event);
 				}
 				
-				var pasteFunc = function(event)
-				{
-					
-					
-					//alert(event);
-				}
-				
 				editor[0].onkeyup = myFunc;
-				//editor[0].onpaste = pasteFunc;
-				//editor[0].onclick = myFunc;
-				
 				editor[0].setAttribute("onpaste", "setTimeout(function(){Hook();}, 4);");
-				
-			
 			}
 
 		</script>
