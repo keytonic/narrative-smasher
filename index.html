@@ -42,12 +42,14 @@
 				var buffer = editor[0].innerText.replace(/(\r\n|\n|\r)/gm,"");
 				subtitles[0].innerHTML = "Input(" + buffer.length + "):";
 
-				var myFunc = function() 
+				var myFunc = function(event) 
 				{
 					var subtitles = document.getElementsByClassName("subtitle");
 					var editor = document.getElementsByClassName("notranslate public-DraftEditor-content");
 					var buffer = editor[0].innerText.replace(/(\r\n|\n|\r)/gm,"");
 					subtitles[0].innerHTML = "Input(" + buffer.length + "):";
+					
+					alert(event);
 				}
 				
 				editor[0].onkeyup = myFunc;
