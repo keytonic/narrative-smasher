@@ -24,6 +24,9 @@
 				titles[0].innerHTML = "Bullet Smasher";
 				titles[0].style.display = "inline";
 				
+				var footer = document.getElementById("footer");
+				footer.style.display = "none";
+				
 				document.getElementsByClassName("navbar")[0].style.display = "inline";
 				document.getElementsByClassName("navbar-start")[0].style.display = "inline";
 
@@ -33,6 +36,8 @@
 				navbaritems[2].style.display = "none";
 				navbaritems[3].style.display = "inline";
 				navbaritems[4].style.display = "inline";
+				
+				document.getElementsByClassName("tabs")[0].setAttribute("onclick", "Hook()");
 				
 				var subtitles = document.getElementsByClassName("subtitle");
 				subtitles[0].innerHTML = "Input:";
@@ -55,6 +60,8 @@
 				editor[0].onkeyup = myFunc;
 				//editor[0].oninput = myFunc;
 				editor[0].onpaste = myFunc;
+				editor[0].onclick = myFunc;
+
 			}
 
 		</script>
