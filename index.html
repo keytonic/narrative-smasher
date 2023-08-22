@@ -5,7 +5,7 @@
 		<link rel="icon" href="./favicon.ico"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
 		<meta name="theme-color" content="#000000"/>
-		<meta name="description" content="Web site created using create-react-app"/>
+		<meta name="description" content=""/>
 		<link rel="apple-touch-icon" href="./logo192.png"/>
 		<link rel="manifest" href="./manifest.json"/>
 		<title>AF Bullet Shaping Tool</title>
@@ -61,8 +61,39 @@
 				editor[0].onkeyup = myFunc;
 				editor[0].setAttribute("onpaste", "setTimeout(function(){Hook();}, 4);");
 
-				//hide output box, since we arent doing bullets any more
-				document.getElementsByClassName("column")[5].style.display = "none";
+				var tehchkbox = document.getElementById("tehchkbox");
+
+				if(tehchkbox == null)
+				{
+					var navbarstart = document.getElementsByClassName("navbar-start")[0];
+					//navbarstart.innerHTML += '<input id="tehchkbox" type="checkbox"><label for="tehchkbox"> Bullet Mode</label>';
+					navbarstart.insertAdjacentHTML("beforeend", '<div class="navbar-item" style="display: inline;"><input id="tehchkbox" type="checkbox"><label for="tehchkbox"> Bullet Mode</label></div>');
+					
+				}
+
+				var tehchkbox = document.getElementById("tehchkbox");
+
+				if (tehchkbox != null)
+				{
+					if (tehchkbox.checked != true)
+					{
+						document.getElementsByClassName("column")[5].style.display = "none";
+						document.getElementsByClassName("column")[2].style.display = "none";
+						navbaritems[3].style.display = "none";
+
+						document.title = "Narrative Smasher";
+						titles[0].innerHTML = "Narrative Smasher";
+					}
+					else
+					{
+						document.getElementsByClassName("column")[5].style.display = "block";
+						document.getElementsByClassName("column")[2].style.display = "block";
+						navbaritems[3].style.display = "inline";
+
+						document.title = "Bullet Smasher";
+						titles[0].innerHTML = "Bullet Smasher";
+					}
+				}
 			}
 
 		</script>
